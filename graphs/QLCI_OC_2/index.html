@@ -1,0 +1,123 @@
+<head>
+  <style> body { margin: 0; } </style>
+
+  <script src="//unpkg.com/3d-force-graph-vr"></script>
+  <!--<script src="../../dist/3d-force-graph-vr.js"></script>-->
+  
+  <script src="//unpkg.com/three-spritetext"></script>
+</head>
+
+<body>
+  <div id="3d-graph"></div>
+
+  <script>
+	const gData = {
+	  "nodes": [
+		{"id": "Barak", "group": 2, "size": 20},
+		{"id": "Cappellaro", "group": 1, "size": 20},
+		{"id": "Chandran", "group": 4, "size": 20},
+		{"id": "Checkelsky", "group": 1, "size": 20},
+		{"id": "Choi", "group": 1, "size": 20},
+		{"id": "Chuang", "group": 1, "size": 20},
+		{"id": "Côté", "group": 5, "size": 20},
+		{"id": "Demler", "group": 2, "size": 20},
+		{"id": "Englund", "group": 1, "size": 20},
+		{"id": "Greiner", "group": 2, "size": 20},
+		{"id": "Han", "group": 1, "size": 20},
+		{"id": "Hayden", "group": 3, "size": 20},
+		{"id": "Hu", "group": 2, "size": 20},
+		{"id": "Jarillo-Herrero", "group": 1, "size": 20},
+		{"id": "Ketterle", "group": 1, "size": 20},
+		{"id": "Kim", "group": 2, "size": 20},
+		{"id": "Lukin", "group": 2, "size": 20},
+		{"id": "Ni", "group": 2, "size": 20},
+		{"id": "Natarajan", "group": 1, "size": 20},
+		{"id": "Notaros", "group": 1, "size": 20},
+		{"id": "Park", "group": 2, "size": 20},
+		{"id": "Preskill", "group": 6, "size": 20},
+		{"id": "Sachdev", "group": 2, "size": 20},
+		{"id": "Schleier-Smith", "group": 3, "size": 20},
+		{"id": "Sudan", "group": 2, "size": 20},
+		{"id": "Sushkov", "group": 4, "size": 20},
+		{"id": "Todadri", "group": 1, "size": 20},
+		{"id": "Vuckovic", "group": 3, "size": 20},
+		{"id": "Zwierlein", "group": 1, "size": 20},
+		{"id": "RA1", "group": 7, "size": 50},
+		{"id": "RA2", "group": 7, "size": 50},
+		{"id": "RA3", "group": 7, "size": 50},
+		{"id": "RA4", "group": 7, "size": 50},
+		{"id": "RA5", "group": 7, "size": 50},
+		{"id": "RA6", "group": 7, "size": 50}
+	  ],
+	  "links": [
+		{"source": "RA1", "target": "Barak", "value": 2},
+		{"source": "RA1", "target": "Choi", "value": 3},
+		{"source": "RA1", "target": "Chuang", "value": 3},
+		{"source": "RA1", "target": "Demler", "value": 3},
+		{"source": "RA1", "target": "Hayden", "value": 3},
+		{"source": "RA1", "target": "Lukin", "value": 3},
+		{"source": "RA1", "target": "Natarajan", "value": 3},
+		{"source": "RA1", "target": "Preskill", "value": 2},
+		{"source": "RA1", "target": "Schleier-Smith", "value": 3},
+		{"source": "RA1", "target": "Sudan", "value": 3},
+		{"source": "RA1", "target": "Zwierlein", "value": 3},
+		{"source": "RA2", "target": "Englund", "value": 3},
+		{"source": "RA2", "target": "Greiner", "value": 1},
+		{"source": "RA2", "target": "Ketterle", "value": 1},
+		{"source": "RA2", "target": "Zwierlein", "value": 2},
+		{"source": "RA3", "target": "Chandran", "value": 3},
+		{"source": "RA3", "target": "Côté", "value": 3},
+		{"source": "RA3", "target": "Greiner", "value": 3},
+		{"source": "RA3", "target": "Lukin", "value": 2},
+		{"source": "RA3", "target": "Ni", "value": 1},
+		{"source": "RA3", "target": "Sachdev", "value": 3},
+		{"source": "RA3", "target": "Schleier-Smith", "value": 2},
+		{"source": "RA4", "target": "Checkelsky", "value": 2},
+		{"source": "RA4", "target": "Demler", "value": 3},
+		{"source": "RA4", "target": "Jarillo-Herrero", "value": 2},
+		{"source": "RA4", "target": "Kim", "value": 1},
+		{"source": "RA4", "target": "Lukin", "value": 3},
+		{"source": "RA4", "target": "Park", "value": 2},
+		{"source": "RA4", "target": "Sachdev", "value": 3},
+		{"source": "RA4", "target": "Todadri", "value": 3},
+		{"source": "RA5", "target": "Cappellaro", "value": 1},
+		{"source": "RA5", "target": "Choi", "value": 3},
+		{"source": "RA5", "target": "Englund", "value": 2},
+		{"source": "RA5", "target": "Lukin", "value": 2},
+		{"source": "RA5", "target": "Park", "value": 3},
+		{"source": "RA5", "target": "Sushkov", "value": 3},
+		{"source": "RA5", "target": "Todadri", "value": 3},
+		{"source": "RA6", "target": "Barak", "value": 3},
+		{"source": "RA6", "target": "Cappellaro", "value": 3},
+		{"source": "RA6", "target": "Chandran", "value": 3},
+		{"source": "RA6", "target": "Choi", "value": 3},
+		{"source": "RA6", "target": "Englund", "value": 1},
+		{"source": "RA6", "target": "Han", "value": 2},
+		{"source": "RA6", "target": "Hu", "value": 3},
+		{"source": "RA6", "target": "Lukin", "value": 3},
+		{"source": "RA6", "target": "Notaros", "value": 3},
+		{"source": "RA6", "target": "Preskill", "value": 3},
+		{"source": "RA6", "target": "Vuckovic", "value": 2}
+	  ]
+	};
+
+    const Graph = ForceGraphVR()
+      (document.getElementById('3d-graph'))
+        .graphData(gData)
+        .nodeLabel('id')
+        .nodeAutoColorBy('group')
+		.nodeOpacity(1)
+		.nodeThreeObject(node => {
+			const imgTexture = new THREE.TextureLoader().load(`../QLCI_photos/${node.id}.png`);
+			const material = new THREE.SpriteMaterial({ map: imgTexture });
+			const sprite = new THREE.Sprite(material);
+			sprite.scale.set(node.size, node.size);
+			return sprite;
+        })
+		.linkWidth(1)
+		.linkOpacity(1)
+		.linkCurvature(0.2)
+		.linkAutoColorBy('value')
+		.numDimensions(2);
+  </script>
+</body>
