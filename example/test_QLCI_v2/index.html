@@ -11,9 +11,99 @@
   <div id="3d-graph"></div>
 
   <script>
+	const gData = {
+	  "nodes": [
+		{"id": "Barak", "group": 2},
+		{"id": "Cappellaro", "group": 1},
+		{"id": "Chandran", "group": 4},
+		{"id": "Checkelsky", "group": 1},
+		{"id": "Choi", "group": 1},
+		{"id": "Chuang", "group": 1},
+		{"id": "Côté", "group": 5},
+		{"id": "Demler", "group": 2},
+		{"id": "Englund", "group": 1},
+		{"id": "Greiner", "group": 2},
+		{"id": "Han", "group": 1},
+		{"id": "Hayden", "group": 3},
+		{"id": "Hu", "group": 2},
+		{"id": "Jarillo-Herrero", "group": 1},
+		{"id": "Ketterle", "group": 1},
+		{"id": "Kim", "group": 2},
+		{"id": "Lukin", "group": 2},
+		{"id": "Ni", "group": 2},
+		{"id": "Natarajan", "group": 1},
+		{"id": "Notaros", "group": 1},
+		{"id": "Park", "group": 2},
+		{"id": "Preskill", "group": 6},
+		{"id": "Sachdev", "group": 2},
+		{"id": "Schleier-Smith", "group": 3},
+		{"id": "Sudan", "group": 2},
+		{"id": "Sushkov", "group": 4},
+		{"id": "Todadri", "group": 1},
+		{"id": "Vuckovic", "group": 3},
+		{"id": "Zwierlein", "group": 1},
+		{"id": "RA1", "group": 7},
+		{"id": "RA2", "group": 7},
+		{"id": "RA3", "group": 7},
+		{"id": "RA4", "group": 7},
+		{"id": "RA5", "group": 7},
+		{"id": "RA6", "group": 7}
+	  ],
+	  "links": [
+		{"source": "RA1", "target": "Barak", "value": 2},
+		{"source": "RA1", "target": "Choi", "value": 3},
+		{"source": "RA1", "target": "Chuang", "value": 3},
+		{"source": "RA1", "target": "Demler", "value": 3},
+		{"source": "RA1", "target": "Hayden", "value": 3},
+		{"source": "RA1", "target": "Lukin", "value": 3},
+		{"source": "RA1", "target": "Natarajan", "value": 3},
+		{"source": "RA1", "target": "Preskill", "value": 2},
+		{"source": "RA1", "target": "Schleier-Smith", "value": 3},
+		{"source": "RA1", "target": "Sudan", "value": 3},
+		{"source": "RA1", "target": "Zwierlein", "value": 3},
+		{"source": "RA2", "target": "Englund", "value": 3},
+		{"source": "RA2", "target": "Greiner", "value": 1},
+		{"source": "RA2", "target": "Ketterle", "value": 1},
+		{"source": "RA2", "target": "Zwierlein", "value": 2},
+		{"source": "RA3", "target": "Chandran", "value": 3},
+		{"source": "RA3", "target": "Côté", "value": 3},
+		{"source": "RA3", "target": "Greiner", "value": 3},
+		{"source": "RA3", "target": "Lukin", "value": 2},
+		{"source": "RA3", "target": "Ni", "value": 1},
+		{"source": "RA3", "target": "Sachdev", "value": 3},
+		{"source": "RA3", "target": "Schleier-Smith", "value": 2},
+		{"source": "RA4", "target": "Checkelsky", "value": 2},
+		{"source": "RA4", "target": "Demler", "value": 3},
+		{"source": "RA4", "target": "Jarillo-Herrero", "value": 2},
+		{"source": "RA4", "target": "Kim", "value": 1},
+		{"source": "RA4", "target": "Lukin", "value": 3},
+		{"source": "RA4", "target": "Park", "value": 2},
+		{"source": "RA4", "target": "Sachdev", "value": 3},
+		{"source": "RA4", "target": "Todadri", "value": 3},
+		{"source": "RA5", "target": "Cappellaro", "value": 1},
+		{"source": "RA5", "target": "Choi", "value": 3},
+		{"source": "RA5", "target": "Englund", "value": 2},
+		{"source": "RA5", "target": "Lukin", "value": 2},
+		{"source": "RA5", "target": "Park", "value": 3},
+		{"source": "RA5", "target": "Sushkov", "value": 3},
+		{"source": "RA5", "target": "Todadri", "value": 3},
+		{"source": "RA6", "target": "Barak", "value": 3},
+		{"source": "RA6", "target": "Cappellaro", "value": 3},
+		{"source": "RA6", "target": "Chandran", "value": 3},
+		{"source": "RA6", "target": "Choi", "value": 3},
+		{"source": "RA6", "target": "Englund", "value": 1},
+		{"source": "RA6", "target": "Han", "value": 2},
+		{"source": "RA6", "target": "Hu", "value": 3},
+		{"source": "RA6", "target": "Lukin", "value": 3},
+		{"source": "RA6", "target": "Notaros", "value": 3},
+		{"source": "RA6", "target": "Preskill", "value": 3},
+		{"source": "RA6", "target": "Vuckovic", "value": 2}
+	  ]
+	}
+
     const Graph = ForceGraphVR()
       (document.getElementById('3d-graph'))
-        .jsonUrl('../datasets/QLCI_test.json')
+        .graphData(gdata)
         .nodeLabel('id')
         .nodeAutoColorBy('group')
 		.nodeOpacity(1)
@@ -25,7 +115,7 @@
         })
 		.linkWidth(1)
 		.linkOpacity(1)
-		.linkCurvature(0.2)
+		.linkCurvature(0)
 		.linkAutoColorBy('value');
   </script>
 </body>
