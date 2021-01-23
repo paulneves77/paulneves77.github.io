@@ -1,0 +1,19 @@
+<head>
+  <style> body { margin: 0; } </style>
+
+  <script src="//unpkg.com/3d-force-graph-vr"></script>
+  <!--<script src="../../dist/3d-force-graph-vr.js"></script>-->
+</head>
+
+<body>
+  <div id="3d-graph"></div>
+
+  <script>
+    const Graph = ForceGraphVR()
+      (document.getElementById('3d-graph'))
+        .jsonUrl('../datasets/QLCI_test.json')
+        .nodeLabel('id')
+        .nodeAutoColorBy('group')
+		.linkAutoColorBy('value');
+  </script>
+</body>
