@@ -13,35 +13,35 @@
   <script>
 	const gData = {
 	  "nodes": [
-		{"id": "Barak", "group": 2, "size": 10},
-		{"id": "Cappellaro", "group": 1, "size": 10},
-		{"id": "Chandran", "group": 4, "size": 10},
-		{"id": "Checkelsky", "group": 1, "size": 10},
-		{"id": "Choi", "group": 1, "size": 10},
-		{"id": "Chuang", "group": 1, "size": 10},
-		{"id": "Côté", "group": 5, "size": 10},
-		{"id": "Demler", "group": 2, "size": 10},
-		{"id": "Englund", "group": 1, "size": 10},
-		{"id": "Greiner", "group": 2, "size": 10},
-		{"id": "Han", "group": 1, "size": 10},
-		{"id": "Hayden", "group": 3, "size": 10},
-		{"id": "Hu", "group": 2, "size": 10},
-		{"id": "Jarillo-Herrero", "group": 1, "size": 10},
-		{"id": "Ketterle", "group": 1, "size": 10},
-		{"id": "Kim", "group": 2, "size": 10},
-		{"id": "Lukin", "group": 2, "size": 10},
-		{"id": "Ni", "group": 2, "size": 10},
-		{"id": "Natarajan", "group": 1, "size": 10},
-		{"id": "Notaros", "group": 1, "size": 10},
-		{"id": "Park", "group": 2, "size": 10},
-		{"id": "Preskill", "group": 6, "size": 10},
-		{"id": "Sachdev", "group": 2, "size": 10},
-		{"id": "Schleier-Smith", "group": 3, "size": 10},
-		{"id": "Sudan", "group": 2, "size": 10},
-		{"id": "Sushkov", "group": 4, "size": 10},
-		{"id": "Todadri", "group": 1, "size": 10},
-		{"id": "Vuckovic", "group": 3, "size": 10},
-		{"id": "Zwierlein", "group": 1, "size": 10}
+		{"id": "Barak", "group": 2, "sizex": 10, "sizey": 10},
+		{"id": "Cappellaro", "group": 1, "sizex": 10, "sizey": 10},
+		{"id": "Chandran", "group": 4, "sizex": 10, "sizey": 10},
+		{"id": "Checkelsky", "group": 1, "sizex": 10, "sizey": 10},
+		{"id": "Choi", "group": 1, "sizex": 10, "sizey": 10},
+		{"id": "Chuang", "group": 1, "sizex": 10, "sizey": 10},
+		{"id": "Côté", "group": 5, "sizex": 10, "sizey": 10},
+		{"id": "Demler", "group": 2, "sizex": 10, "sizey": 10},
+		{"id": "Englund", "group": 1, "sizex": 10, "sizey": 10},
+		{"id": "Greiner", "group": 2, "sizex": 10, "sizey": 10},
+		{"id": "Han", "group": 1, "sizex": 10, "sizey": 10},
+		{"id": "Hayden", "group": 3, "sizex": 10, "sizey": 10},
+		{"id": "Hu", "group": 2, "sizex": 10, "sizey": 10},
+		{"id": "Jarillo-Herrero", "group": 1, "sizex": 10, "sizey": 10},
+		{"id": "Ketterle", "group": 1, "sizex": 10, "sizey": 10},
+		{"id": "Kim", "group": 2, "sizex": 10, "sizey": 10},
+		{"id": "Lukin", "group": 2, "sizex": 10, "sizey": 10},
+		{"id": "Ni", "group": 2, "sizex": 10, "sizey": 10},
+		{"id": "Natarajan", "group": 1, "sizex": 10, "sizey": 10},
+		{"id": "Notaros", "group": 1, "sizex": 10, "sizey": 10},
+		{"id": "Park", "group": 2, "sizex": 10, "sizey": 10},
+		{"id": "Preskill", "group": 6, "sizex": 10, "sizey": 10},
+		{"id": "Sachdev", "group": 2, "sizex": 10, "sizey": 10},
+		{"id": "Schleier-Smith", "group": 3, "sizex": 10, "sizey": 10},
+		{"id": "Sudan", "group": 2, "sizex": 10, "sizey": 10},
+		{"id": "Sushkov", "group": 4, "sizex": 10, "sizey": 10},
+		{"id": "Todadri", "group": 1, "sizex": 10, "sizey": 10},
+		{"id": "Vuckovic", "group": 3, "sizex": 10, "sizey": 10},
+		{"id": "Zwierlein", "group": 1, "sizex": 10, "sizey": 10}
 	  ],
 	  "links": [
 		{"source": "Barak", "target": "Choi", "value": 1},
@@ -244,7 +244,7 @@
 			const imgTexture = new THREE.TextureLoader().load(`./imgs/${node.id}.png`);
 			const material = new THREE.SpriteMaterial({ map: imgTexture });
 			const sprite = new THREE.Sprite(material);
-			sprite.scale.set(node.size, node.size);
+			sprite.scale.set(node.sizex, node.sizey);
 			return sprite;
         })
 		.linkWidth(0.5)
