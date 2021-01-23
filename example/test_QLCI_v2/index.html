@@ -3,6 +3,8 @@
 
   <script src="//unpkg.com/3d-force-graph-vr"></script>
   <!--<script src="../../dist/3d-force-graph-vr.js"></script>-->
+  
+  <script src="//unpkg.com/three-spritetext"></script>
 </head>
 
 <body>
@@ -15,6 +17,12 @@
         .nodeLabel('id')
         .nodeAutoColorBy('group')
 		.nodeOpacity(1)
+		.nodeThreeObject(node => {
+          const sprite = new SpriteText(node.id);
+          sprite.color = node.color;
+          sprite.textHeight = 8;
+          return sprite;
+        })
 		.linkWidth(1)
 		.linkOpacity(1)
 		.linkCurvature(0.2)
