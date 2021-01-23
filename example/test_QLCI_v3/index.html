@@ -11,45 +11,43 @@
   <div id="3d-graph"></div>
 
   <script>
-	const imgs = ['Barak.png', 'Cappellaro.png', 'Chandran.png', 'Checkelsky.png', 'Choi.png', 'Chuang.png', 'Côté.png', 'Demler.png', 'Englund.png', 'Greiner.png', 'Han.png', 'Hayden.png', 'Hu.png', 'Jarillo-Herrero.png', 'Ketterle.png', 'Kim.png', 'Lukin.png', 'Ni.png', 'Natarajan.png', 'Notaros.png', 'Park.png', 'Preskill.png', 'Sachdev.png', 'Schleier-Smith.png', 'Sudan.png', 'Sushkov.png', 'Todadri.png', 'Vuckovic.png', 'Zwierlein.png', 'RA1.png', 'RA2.png', 'RA3.png', 'RA4.png', 'RA5.png', 'RA6.png'];
-	
 	const gData = {
 	  "nodes": [
-		{"id": "Barak", "group": 2},
-		{"id": "Cappellaro", "group": 1},
-		{"id": "Chandran", "group": 4},
-		{"id": "Checkelsky", "group": 1},
-		{"id": "Choi", "group": 1},
-		{"id": "Chuang", "group": 1},
-		{"id": "Côté", "group": 5},
-		{"id": "Demler", "group": 2},
-		{"id": "Englund", "group": 1},
-		{"id": "Greiner", "group": 2},
-		{"id": "Han", "group": 1},
-		{"id": "Hayden", "group": 3},
-		{"id": "Hu", "group": 2},
-		{"id": "Jarillo-Herrero", "group": 1},
-		{"id": "Ketterle", "group": 1},
-		{"id": "Kim", "group": 2},
-		{"id": "Lukin", "group": 2},
-		{"id": "Ni", "group": 2},
-		{"id": "Natarajan", "group": 1},
-		{"id": "Notaros", "group": 1},
-		{"id": "Park", "group": 2},
-		{"id": "Preskill", "group": 6},
-		{"id": "Sachdev", "group": 2},
-		{"id": "Schleier-Smith", "group": 3},
-		{"id": "Sudan", "group": 2},
-		{"id": "Sushkov", "group": 4},
-		{"id": "Todadri", "group": 1},
-		{"id": "Vuckovic", "group": 3},
-		{"id": "Zwierlein", "group": 1},
-		{"id": "RA1", "group": 7},
-		{"id": "RA2", "group": 7},
-		{"id": "RA3", "group": 7},
-		{"id": "RA4", "group": 7},
-		{"id": "RA5", "group": 7},
-		{"id": "RA6", "group": 7}
+		{"id": "Barak", "group": 2, "size": 20},
+		{"id": "Cappellaro", "group": 1, "size": 20},
+		{"id": "Chandran", "group": 4, "size": 20},
+		{"id": "Checkelsky", "group": 1, "size": 20},
+		{"id": "Choi", "group": 1, "size": 20},
+		{"id": "Chuang", "group": 1, "size": 20},
+		{"id": "Côté", "group": 5, "size": 20},
+		{"id": "Demler", "group": 2, "size": 20},
+		{"id": "Englund", "group": 1, "size": 20},
+		{"id": "Greiner", "group": 2, "size": 20},
+		{"id": "Han", "group": 1, "size": 20},
+		{"id": "Hayden", "group": 3, "size": 20},
+		{"id": "Hu", "group": 2, "size": 20},
+		{"id": "Jarillo-Herrero", "group": 1, "size": 20},
+		{"id": "Ketterle", "group": 1, "size": 20},
+		{"id": "Kim", "group": 2, "size": 20},
+		{"id": "Lukin", "group": 2, "size": 20},
+		{"id": "Ni", "group": 2, "size": 20},
+		{"id": "Natarajan", "group": 1, "size": 20},
+		{"id": "Notaros", "group": 1, "size": 20},
+		{"id": "Park", "group": 2, "size": 20},
+		{"id": "Preskill", "group": 6, "size": 20},
+		{"id": "Sachdev", "group": 2, "size": 20},
+		{"id": "Schleier-Smith", "group": 3, "size": 20},
+		{"id": "Sudan", "group": 2, "size": 20},
+		{"id": "Sushkov", "group": 4, "size": 20},
+		{"id": "Todadri", "group": 1, "size": 20},
+		{"id": "Vuckovic", "group": 3, "size": 20},
+		{"id": "Zwierlein", "group": 1, "size": 20},
+		{"id": "RA1", "group": 7, "size": 50},
+		{"id": "RA2", "group": 7, "size": 50},
+		{"id": "RA3", "group": 7, "size": 50},
+		{"id": "RA4", "group": 7, "size": 50},
+		{"id": "RA5", "group": 7, "size": 50},
+		{"id": "RA6", "group": 7, "size": 50}
 	  ],
 	  "links": [
 		{"source": "RA1", "target": "Barak", "value": 2},
@@ -110,10 +108,10 @@
         .nodeAutoColorBy('group')
 		.nodeOpacity(1)
 		.nodeThreeObject(node => {
-			const imgTexture = new THREE.TextureLoader().load(`./imgs/${node.id}.png`);
+			const imgTexture = new THREE.TextureLoader().load(`../QLCI_photos/${node.id}.png`);
 			const material = new THREE.SpriteMaterial({ map: imgTexture });
 			const sprite = new THREE.Sprite(material);
-			sprite.scale.set(20, 20);
+			sprite.scale.set(node.size, node.size);
 			return sprite;
         })
 		.linkWidth(1)
