@@ -11,6 +11,8 @@
   <div id="3d-graph"></div>
 
   <script>
+	const imgs = ['Barak.png', 'Cappellaro.png', 'Chandran.png', 'Checkelsky.png', 'Choi.png', 'Chuang.png', 'Côté.png', 'Demler.png', 'Englund.png', 'Greiner.png', 'Han.png', 'Hayden.png', 'Hu.png', 'Jarillo-Herrero.png', 'Ketterle.png', 'Kim.png', 'Lukin.png', 'Ni.png', 'Natarajan.png', 'Notaros.png', 'Park.png', 'Preskill.png', 'Sachdev.png', 'Schleier-Smith.png', 'Sudan.png', 'Sushkov.png', 'Todadri.png', 'Vuckovic.png', 'Zwierlein.png', 'RA1.png', 'RA2.png', 'RA3.png', 'RA4.png', 'RA5.png', 'RA6.png'];
+	
 	const gData = {
 	  "nodes": [
 		{"id": "Barak", "group": 2},
@@ -108,10 +110,11 @@
         .nodeAutoColorBy('group')
 		.nodeOpacity(1)
 		.nodeThreeObject(node => {
-          const sprite = new SpriteText(node.id);
-          sprite.color = node.color;
-          sprite.textHeight = 8;
-          return sprite;
+			const imgTexture = new THREE.TextureLoader().load('./imgs/${id}.png');
+			const material = new THREE.SpriteMaterial({ map: imgTexture });
+			const sprite = new THREE.Sprite(material);
+			sprite.scale.set(12, 12);
+			return sprite;
         })
 		.linkWidth(1)
 		.linkOpacity(1)
