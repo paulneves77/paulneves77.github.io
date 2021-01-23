@@ -47,7 +47,8 @@
 		{"id": "RA3", "group": 7, "size": 50},
 		{"id": "RA4", "group": 7, "size": 50},
 		{"id": "RA5", "group": 7, "size": 50},
-		{"id": "RA6", "group": 7, "size": 50}
+		{"id": "RA6", "group": 7, "size": 50},
+		{"id": "EC", "group": 7, "size": 50}
 	  ],
 	  "links": [
 		{"source": "RA1", "target": "Barak", "value": 2},
@@ -97,7 +98,16 @@
 		{"source": "RA6", "target": "Lukin", "value": 3},
 		{"source": "RA6", "target": "Notaros", "value": 3},
 		{"source": "RA6", "target": "Preskill", "value": 3},
-		{"source": "RA6", "target": "Vuckovic", "value": 2}
+		{"source": "RA6", "target": "Vuckovic", "value": 2},
+		{"source": "EC", "target": "Lukin", "value": 4},
+		{"source": "EC", "target": "Hu", "value": 4},
+		{"source": "EC", "target": "Ketterle", "value": 4},
+		{"source": "EC", "target": "Preskill", "value": 4},
+		{"source": "EC", "target": "Greiner", "value": 4},
+		{"source": "EC", "target": "Ni", "value": 4},
+		{"source": "EC", "target": "Cappellaro", "value": 4},
+		{"source": "EC", "target": "Kim", "value": 4},
+		{"source": "EC", "target": "Englund", "value": 4}
 	  ]
 	};
 
@@ -108,7 +118,7 @@
         .nodeAutoColorBy('group')
 		.nodeOpacity(1)
 		.nodeThreeObject(node => {
-			const imgTexture = new THREE.TextureLoader().load(`../QLCI_inst_fc/${node.id}.png`);
+			const imgTexture = new THREE.TextureLoader().load(`./imgs/${node.id}.png`);
 			const material = new THREE.SpriteMaterial({ map: imgTexture });
 			const sprite = new THREE.Sprite(material);
 			sprite.scale.set(node.size, node.size);
@@ -116,7 +126,7 @@
         })
 		.linkWidth(1)
 		.linkOpacity(1)
-		.linkColor(#0000FF)
+		.linkColor(rgb(255, 255, 255))
 		.linkCurvature(0.2)
 		.numDimensions(3);
   </script>

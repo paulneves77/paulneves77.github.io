@@ -108,7 +108,7 @@
         .nodeAutoColorBy('group')
 		.nodeOpacity(1)
 		.nodeThreeObject(node => {
-			const imgTexture = new THREE.TextureLoader().load(`../QLCI_dep_fc/${node.id}.png`);
+			const imgTexture = new THREE.TextureLoader().load(`./imgs/${node.id}.png`);
 			const material = new THREE.SpriteMaterial({ map: imgTexture });
 			const sprite = new THREE.Sprite(material);
 			sprite.scale.set(node.size, node.size);
