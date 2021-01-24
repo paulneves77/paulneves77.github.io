@@ -1,0 +1,136 @@
+<head>
+  <style> body { margin: 0; } </style>
+
+  <script src="//aframe.io/releases/1.0.0/aframe.min.js"></script>
+  <script src="//unpkg.com/ar.js/aframe/build/aframe-ar.min.js"></script>
+
+  <script src="//unpkg.com/3d-force-graph-ar"></script>
+  <!--<script src="../../dist/3d-force-graph-ar.js"></script>-->
+</head>
+
+<body>
+  <div id="3d-graph"></div>
+
+  <script>
+	const gData = {
+	  "nodes": [
+		{"id": "Bar", "group": 2, "sizex": 15, "sizey": 15},
+		{"id": "Cap", "group": 1, "sizex": 15, "sizey": 15},
+		{"id": "Cha", "group": 4, "sizex": 15, "sizey": 15},
+		{"id": "Che", "group": 1, "sizex": 15, "sizey": 15},
+		{"id": "Cho", "group": 1, "sizex": 15, "sizey": 15},
+		{"id": "Chu", "group": 1, "sizex": 15, "sizey": 15},
+		{"id": "Côt", "group": 5, "sizex": 15, "sizey": 15},
+		{"id": "Dem", "group": 2, "sizex": 15, "sizey": 15},
+		{"id": "Eng", "group": 1, "sizex": 15, "sizey": 15},
+		{"id": "Gre", "group": 2, "sizex": 15, "sizey": 15},
+		{"id": "Han", "group": 1, "sizex": 15, "sizey": 15},
+		{"id": "Hay", "group": 3, "sizex": 15, "sizey": 15},
+		{"id": "Hu", "group": 2, "sizex": 15, "sizey": 15},
+		{"id": "Jar", "group": 1, "sizex": 15, "sizey": 15},
+		{"id": "Ket", "group": 1, "sizex": 15, "sizey": 15},
+		{"id": "Kim", "group": 2, "sizex": 15, "sizey": 15},
+		{"id": "Luk", "group": 2, "sizex": 15, "sizey": 15},
+		{"id": "Ni", "group": 2, "sizex": 15, "sizey": 15},
+		{"id": "Nat", "group": 1, "sizex": 15, "sizey": 15},
+		{"id": "Not", "group": 1, "sizex": 15, "sizey": 15},
+		{"id": "Par", "group": 2, "sizex": 15, "sizey": 15},
+		{"id": "Pre", "group": 6, "sizex": 15, "sizey": 15},
+		{"id": "Sac", "group": 2, "sizex": 15, "sizey": 15},
+		{"id": "Sch", "group": 3, "sizex": 15, "sizey": 15},
+		{"id": "Sud", "group": 2, "sizex": 15, "sizey": 15},
+		{"id": "Sus", "group": 4, "sizex": 15, "sizey": 15},
+		{"id": "Tod", "group": 1, "sizex": 15, "sizey": 15},
+		{"id": "Vuc", "group": 3, "sizex": 15, "sizey": 15},
+		{"id": "Zwi", "group": 1, "sizex": 15, "sizey": 15},
+		{"id": "RA1", "group": 7, "sizex": 30, "sizey": 22},
+		{"id": "RA2", "group": 7, "sizex": 30, "sizey": 22},
+		{"id": "RA3", "group": 7, "sizex": 30, "sizey": 24},
+		{"id": "RA4", "group": 7, "sizex": 30, "sizey": 22},
+		{"id": "RA5", "group": 7, "sizex": 30, "sizey": 26},
+		{"id": "RA6", "group": 7, "sizex": 30, "sizey": 12},
+		{"id": "EC", "group": 7, "sizex": 30, "sizey": 30}
+	  ],
+	  "links": [
+		{"source": "RA1", "target": "Bar", "value": 2},
+		{"source": "RA1", "target": "Cho", "value": 3},
+		{"source": "RA1", "target": "Chu", "value": 3},
+		{"source": "RA1", "target": "Dem", "value": 3},
+		{"source": "RA1", "target": "Hay", "value": 3},
+		{"source": "RA1", "target": "Luk", "value": 3},
+		{"source": "RA1", "target": "Nat", "value": 3},
+		{"source": "RA1", "target": "Pre", "value": 2},
+		{"source": "RA1", "target": "Sch", "value": 3},
+		{"source": "RA1", "target": "Sud", "value": 3},
+		{"source": "RA1", "target": "Zwi", "value": 3},
+		{"source": "RA2", "target": "Eng", "value": 3},
+		{"source": "RA2", "target": "Gre", "value": 1},
+		{"source": "RA2", "target": "Ket", "value": 1},
+		{"source": "RA2", "target": "Zwi", "value": 2},
+		{"source": "RA3", "target": "Cha", "value": 3},
+		{"source": "RA3", "target": "Côt", "value": 3},
+		{"source": "RA3", "target": "Gre", "value": 3},
+		{"source": "RA3", "target": "Luk", "value": 2},
+		{"source": "RA3", "target": "Ni", "value": 1},
+		{"source": "RA3", "target": "Sac", "value": 3},
+		{"source": "RA3", "target": "Sch", "value": 2},
+		{"source": "RA4", "target": "Che", "value": 2},
+		{"source": "RA4", "target": "Dem", "value": 3},
+		{"source": "RA4", "target": "Jar", "value": 2},
+		{"source": "RA4", "target": "Kim", "value": 1},
+		{"source": "RA4", "target": "Luk", "value": 3},
+		{"source": "RA4", "target": "Par", "value": 2},
+		{"source": "RA4", "target": "Sac", "value": 3},
+		{"source": "RA4", "target": "Tod", "value": 3},
+		{"source": "RA5", "target": "Cap", "value": 1},
+		{"source": "RA5", "target": "Cho", "value": 3},
+		{"source": "RA5", "target": "Eng", "value": 2},
+		{"source": "RA5", "target": "Luk", "value": 2},
+		{"source": "RA5", "target": "Par", "value": 3},
+		{"source": "RA5", "target": "Sus", "value": 3},
+		{"source": "RA5", "target": "Tod", "value": 3},
+		{"source": "RA6", "target": "Bar", "value": 3},
+		{"source": "RA6", "target": "Cap", "value": 3},
+		{"source": "RA6", "target": "Cha", "value": 3},
+		{"source": "RA6", "target": "Cho", "value": 3},
+		{"source": "RA6", "target": "Eng", "value": 1},
+		{"source": "RA6", "target": "Han", "value": 2},
+		{"source": "RA6", "target": "Hu", "value": 3},
+		{"source": "RA6", "target": "Luk", "value": 3},
+		{"source": "RA6", "target": "Not", "value": 3},
+		{"source": "RA6", "target": "Pre", "value": 3},
+		{"source": "RA6", "target": "Vuc", "value": 2},
+		{"source": "EC", "target": "Lu", "value": 4},
+		{"source": "EC", "target": "Hu", "value": 4},
+		{"source": "EC", "target": "Ket", "value": 4},
+		{"source": "EC", "target": "Pre", "value": 4},
+		{"source": "EC", "target": "Gre", "value": 4},
+		{"source": "EC", "target": "Ni", "value": 4},
+		{"source": "EC", "target": "Cap", "value": 4},
+		{"source": "EC", "target": "Kim", "value": 4},
+		{"source": "EC", "target": "Eng", "value": 4}
+	  ]
+	};
+
+    const Graph = ForceGraphAR()
+      (document.getElementById('3d-graph'))
+        .graphData(gData)
+		//.backgroundColor('#FFFFFF')
+		.glScale(40)
+        //.nodeLabel('id')
+        //.nodeAutoColorBy('group')
+		.nodeOpacity(0.8)
+		.nodeThreeObject(node => {
+			const imgTexture = new THREE.TextureLoader().load(`./imgs/${node.id}.png`);
+			const material = new THREE.SpriteMaterial({ map: imgTexture });
+			const sprite = new THREE.Sprite(material);
+			sprite.scale.set(node.sizex, node.sizey);
+			return sprite;
+        })
+		.linkWidth(1)
+		.linkOpacity(1)
+		.linkAutoColorBy('value')
+		.linkCurvature(0)
+		.numDimensions(3);
+  </script>
+</body>
