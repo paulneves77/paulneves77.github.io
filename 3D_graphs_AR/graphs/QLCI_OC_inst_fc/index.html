@@ -112,8 +112,8 @@
 	  ]
 	};
 
-    const Graph = ForceGraphAR({"markerAttrs": {"type": "pattern", "url": "./pattern-P.patt"}})
-      (document.getElementById('3d-graph'))
+    const Graph_inst_fc = ForceGraphAR({"markerAttrs": {"type": "pattern", "url": "./pattern-P.patt"}})
+      (document.getElementById('3d-graph-inst-clr'))
         .graphData(gData)
 		//.backgroundColor('#FFFFFF')
 		.glScale(40)
@@ -134,7 +134,7 @@
 		.numDimensions(3);
 	
 	const Graph_inst_clr = ForceGraphAR({"markerAttrs": {"type": "pattern", "url": "./pattern-Q.patt"}})
-      (document.getElementById('3d-graph'))
+      (document.getElementById('3d-graph-inst-clr'))
         .graphData(gData)
 		//.backgroundColor('#FFFFFF')
 		.glScale(40)
