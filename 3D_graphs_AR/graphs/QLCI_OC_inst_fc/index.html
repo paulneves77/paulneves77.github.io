@@ -112,7 +112,7 @@
 	  ]
 	};
 
-    const Graph = ForceGraphAR()
+    const Graph = ForceGraphAR({"markerAttrs": {"type": "pattern", "url": "./pattern-marker_logo.patt"}})
       (document.getElementById('3d-graph'))
         .graphData(gData)
 		//.backgroundColor('#FFFFFF')
