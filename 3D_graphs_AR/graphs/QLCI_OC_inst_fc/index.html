@@ -115,9 +115,9 @@
     const Graph = ForceGraphAR()
       (document.getElementById('3d-graph'))
         .graphData(gData)
-		.backgroundColor('#FFFFFF')
-        .nodeLabel('id')
-        .nodeAutoColorBy('group')
+		//.backgroundColor('#FFFFFF')
+        //.nodeLabel('id')
+        //.nodeAutoColorBy('group')
 		.nodeOpacity(0.8)
 		.nodeThreeObject(node => {
 			const imgTexture = new THREE.TextureLoader().load(`./imgs/${node.id}.png`);
