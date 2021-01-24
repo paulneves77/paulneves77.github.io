@@ -121,7 +121,28 @@
         //.nodeAutoColorBy('group')
 		.nodeOpacity(0.8)
 		.nodeThreeObject(node => {
-			const imgTexture = new THREE.TextureLoader().load(`./imgs/${node.id}.png`);
+			const imgTexture = new THREE.TextureLoader().load(`./imgs_inst_fc/${node.id}.png`);
+			const material = new THREE.SpriteMaterial({ map: imgTexture });
+			const sprite = new THREE.Sprite(material);
+			sprite.scale.set(node.sizex, node.sizey);
+			return sprite;
+        })
+		.linkWidth(1)
+		.linkOpacity(1)
+		.linkAutoColorBy('value')
+		.linkCurvature(0)
+		.numDimensions(3);
+	
+	const Graph_inst_clr = ForceGraphAR({"markerAttrs": {"type": "pattern", "url": "./pattern-logo3.patt"}})
+      (document.getElementById('3d-graph'))
+        .graphData(gData)
+		//.backgroundColor('#FFFFFF')
+		.glScale(40)
+        //.nodeLabel('id')
+        //.nodeAutoColorBy('group')
+		.nodeOpacity(0.8)
+		.nodeThreeObject(node => {
+			const imgTexture = new THREE.TextureLoader().load(`./imgs_inst_clr/${node.id}.png`);
 			const material = new THREE.SpriteMaterial({ map: imgTexture });
 			const sprite = new THREE.Sprite(material);
 			sprite.scale.set(node.sizex, node.sizey);
