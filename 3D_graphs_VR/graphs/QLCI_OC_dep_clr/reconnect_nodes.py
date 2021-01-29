@@ -12,7 +12,7 @@ PI_list4 = ["Checkelsky", "Demler", "Jarillo-Herrero", "Kim", "Lukin", "Park", "
 PI_list5 = ["Cappellaro", "Choi", "Englund", "Hu", "Lukin", "Park", "Sushkov", "Todadri"]
 PI_list6 = ["Barak", "Cappellaro", "Chandran", "Choi", "Englund", "Han", "Hu", "Lukin", "Notaros", "Preskill", "Vuckovic"]
 EC_list = ["Lukin", "Hu", "Ketterle", "Preskill", "Greiner", "Ni", "Cappellaro", "Kim", "Englund"]
-EDU_list = ["Cote", "Hu", "Checkelsky"]
+EDU_list = ["Côté", "Hu", "Checkelsky"]
 
 PI_lists= [PI_list1, PI_list2, PI_list3, PI_list4, PI_list5, PI_list6, EC_list, EDU_list]
 
