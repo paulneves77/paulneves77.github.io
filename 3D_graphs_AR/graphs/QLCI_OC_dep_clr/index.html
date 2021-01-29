@@ -334,7 +334,7 @@
 		.nodeOpacity(1)
 		.nodeThreeObject(node => {
 			const imgTexture = new THREE.TextureLoader().load(`./imgs/${node.id}.png`);
-			const material = new THREE.SpriteMaterial({ map: imgTexture });
+			const material = new THREE.SpriteMaterial({ map: imgTexture, depthWrite: false });
 			const sprite = new THREE.Sprite(material);
 			sprite.scale.set(node.sizex, node.sizey);
 			return sprite;
