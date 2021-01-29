@@ -28,4 +28,4 @@ with open("edge_list.txt", "w") as f:
 			name_i = PI_list[i]
 			for j in range(len(PI_list)-i-1):
 				name_j = PI_list[i+j+1]
-				f.write(f'		{{"source": "{name_i}", "target": "{name_j}", "value": {value}}},\n')
+				f.write(f'		{{"source": "{name_i}", "target": "{name_j}", "value": {min(value,9)}}},\n')
