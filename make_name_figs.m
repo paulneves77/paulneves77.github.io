@@ -40,7 +40,7 @@ clr_sp = ["#B3B1B2", "#66C298", "#629DD4", "#EAD788", "#ED8A88", ...
 close all
 
 % define semicircles
-r = 0.9;
+r = 0.95;
 sctop = r.*[cos(0:0.01:pi); sin(0:0.01:pi)];
 scbot = r.*[cos(0:0.01:pi); -sin(0:0.01:pi)];
 
@@ -101,7 +101,7 @@ for i = 1:numel(names)
     set(gcf, 'Color', 'None')
     set(gca, 'Color', 'none')
     
-    export_fig(strcat('output/', this_file), '-dpng', '-transparent', '-r60');
+    export_fig(strcat('output/', this_file), '-dpng', '-transparent', '-r120');
     
     [A,map,transparency] = imread(strcat('output/', this_file, ".png"));
     A = A(3:end-2, 3:end-2, :);
