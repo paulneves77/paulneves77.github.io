@@ -40,7 +40,7 @@ clr_sp = ["#B3B1B2", "#66C298", "#629DD4", "#EAD788", "#ED8A88", ...
 close all
 
 % define semicircles
-r = 0.95;
+r = 0.9;
 sctop = r.*[cos(0:0.01:pi); sin(0:0.01:pi)];
 scbot = r.*[cos(0:0.01:pi); -sin(0:0.01:pi)];
 
