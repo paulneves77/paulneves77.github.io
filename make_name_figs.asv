@@ -102,9 +102,10 @@ for i = 1:numel(names)
     set(gca, 'Color', 'none')
     
     export_fig(strcat('output/', this_file), '-dpng', '-transparent', '-r60');
-    close all
-end
-
-for i = 1:numel(names)
     
+    [A,map,transparency] = imread(strcat('output/', this_file, ".png"));
+    transparency(1:3, :, :) = 0;
+    imwrite(A, strcat('output/', this_file, '.png'), 'alpha', transparency);
+    
+    close all
 end
