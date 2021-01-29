@@ -13,11 +13,13 @@ PI_list5 = ["Cappellaro", "Choi", "Englund", "Hu", "Lukin", "Park", "Sushkov", "
 PI_list6 = ["Barak", "Cappellaro", "Chandran", "Choi", "Englund", "Han", "Hu", "Lukin", "Notaros", "Preskill", "Vuckovic"]
 EC_list = ["Lukin", "Hu", "Ketterle", "Preskill", "Greiner", "Ni", "Cappellaro", "Kim", "Englund"]
 EDU_list = ["Côté", "Hu", "Checkelsky"]
-PDF1_list = ["PDF
-Greiner
-Demler
+PDF1_list = ["PDF1", "Greiner", "Demler"]
+PDF2_list = ["PDF2", "Ni", "Sachdev"]
+PDF3_list = ["PDF3", "Sudan", "Englund"]
+PDF4_list = ["PDF4", "Cappellaro", "Sushkov"]
+PDF5_list = ["PDF5", "Hayden", "Zwierlein"]
 
-PI_lists= [PI_list1, PI_list2, PI_list3, PI_list4, PI_list5, PI_list6, EC_list, EDU_list]
+PI_lists= [PI_list1, PI_list2, PI_list3, PI_list4, PI_list5, PI_list6, EC_list, EDU_list, PDF1_list, PDF2_list, PDF3_list, PDF4_list, PDF5_list]
 
 with open("edge_list.txt", "w") as f:
 	for ind, PI_list in enumerate(PI_lists):
