@@ -104,7 +104,7 @@ for i = 1:numel(names)
     export_fig(strcat('output/', this_file), '-dpng', '-transparent', '-r60');
     
     [A,map,transparency] = imread(strcat('output/', this_file, ".png"));
-    A = A(3:end-1, 3:end-1, :);
+    A = A(3:end-2, 3:end-2, :);
     transparency = transparency(3:end-2, 3:end-2);
     imwrite(A, strcat('output/', this_file, '.png'), 'alpha', transparency);
     
