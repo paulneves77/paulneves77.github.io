@@ -15,7 +15,8 @@
       <details open>
         <summary>Immersive AR Session</summary>
         <p>
-          The crystal structure of CoSn with a d<sub>z<sup>2</sup></sub> orbital on the Co site,
+          The crystal structure of CoSn with a 
+          d<sub>z<sup>2</sup></sub> orbital on the Co site,
           in immersive AR.
         </p>
       </details>
@@ -39,7 +40,7 @@
       let renderer = null;
       let scene = new Scene();
       scene.enableStats(false);//turns off fps counter
-      let solarSystem = new Gltf2Node({url: 'media/gltf/herbertsmithite.glb'});
+      let solarSystem = new Gltf2Node({url: 'media/gltf/wannier90_00001.glb'});
       solarSystem.scale = [0.01, 0.01, 0.01];
       solarSystem.translation = [0, 0, -0.5];
       scene.addNode(solarSystem);
