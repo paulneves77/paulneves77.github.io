@@ -1,4 +1,4 @@
-<model-viewer src="MnTe.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="0.83" exposure="0.89" environment-image="aircraft_workshop_01_1k.hdr" shadow-softness="1">
+<model-viewer src="MnTe.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="0.83" exposure="1.74" environment-image="aircraft_workshop_01_1k.hdr" shadow-softness="1" camera-orbit="347.7deg 72.67deg 4.365m" field-of-view="36.11deg">
     <div class="progress-bar hide" slot="progress-bar">
         <div class="update-bar"></div>
     </div>
