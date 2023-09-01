@@ -5,6 +5,13 @@ body {
     background-color: #616c7b;
 }
 
+footer {
+    background-color: #616c7b; /* Background color for the footer */
+    color: white; /* Text color */
+    text-align: center; /* Center-align the text */
+    padding: 10px; /* Add some spacing */
+}
+
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -14,6 +21,11 @@ body {
 
 .title {
     color: white;
+}
+
+.footer-text {
+    color: white;
+    font-size: 14px; /* Adjust the font size as needed */
 }
 
 .button-container {
