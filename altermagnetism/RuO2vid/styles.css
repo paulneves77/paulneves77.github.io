@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #56606f;
+    background-color: #616c7b;
 }
 
 .video-container {
@@ -15,6 +15,6 @@ body {
 video {
     max-width: 100%;
     height: auto;
-    border: 1px solid #ccc;
+    border: 0px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
